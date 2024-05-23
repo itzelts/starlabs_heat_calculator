@@ -12,6 +12,7 @@ const App = () => {
     <PropertyProvider>
         <BrowserRouter>
           <div className="bg-white sm:w-[60rem] h-[35rem] mt-[100px] sm:mt-0 rounded-xl shadow-xl p-4 flex flex-col sm:flex sm:flex-row justify-between">
+            {/* <Route path="/" element={<Home />} /> Landing Page! Ask for what should be here */}
             <Sidebar />
             <Routes>
               <Route path="/" element={<Address />} />
