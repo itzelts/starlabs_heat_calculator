@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import PropertyContext from "../context/PropertyContext";
-
+import FinancingContext from "../context/FinanceContext";
 
 const Summary = () => {
   const navigate = useNavigate();
   const { selectedPropertyType } = useContext(PropertyContext);
-
+  let { selectedFinancingOption } = useContext(FinancingContext);
   return (
     <div className="sm:basis-[60%] w-[300px] sm:w-[100%] h-[100%] sm:pr-[80px] text-center">
       <h1 className="mt-10 text-3xl font-[800] mb-2 text-primary-marineBlue">
@@ -21,27 +21,55 @@ const Summary = () => {
       <div className="bg-neutral-alabaster rounded-lg p-5">
         <div className="plan flex justify-between items-center mb-4">
           <div>
-            <span className="text-primary-marineBlue font-[800]">
-              {selectedPropertyType.title} 
-            </span>
-            <p
-              onClick={() => navigate("/selectpropertytype")}
+          <p className="text-primary-marineBlue mb-2 text-[14px] font-[500]">
+                  {item.ti}
+                </p>
+            {/* <p
+              onClick={() => navigate("/selectplan")}
               className="text-neutral-coolGray underline cursor-pointer"
             >
               Change
-            </p>
+            </p> */}
           </div>
+          {/* <div>
+            <span className="text-primary-marineBlue font-[800]">
+              ${selectedFinancingOption.value}
+            </span>
+              <span className="text-primary-marineBlue font-[800]"></span>
+          </div> */}
         </div>
 
         <hr />
+
+        {/* {selectedAddOnsValue.map((item) => {
+          return (
+            <div key={item.id} className="plan flex justify-between items-center mt-4">
+              <div>
+                <p className="text-neutral-coolGray">{item.value}</p>
+              </div>
+              <div>
+                <p className="text-primary-marineBlue mb-2 text-[14px] font-[500]">
+                  +${item.price}/mo
+                </p>
+              </div>
+            </div>
+          );
+        })} */}
+      </div>
+
+      <div className="flex justify-between p-5">
+        <div>
+          <p className="text-neutral-coolGray">Total (per month)</p>
+        </div>
+        <div className="text-primary-purplishBlue font-[800]">+$??/mo</div>
       </div>
 
       <div className="flex justify-around sm:justify-between items-center pt-[260px] sm:pt-[79px]">
         <button
-          onClick={() => navigate("/selectpropertytype")}
+          onClick={() => navigate("/financingoption")}
           className="text-neutral-coolGray font-[500] capitalize transition-all duration-300 hover:text-primary-marineBlue cursor-pointer"
         >
-          Back
+          Go back
         </button>
 
         <button

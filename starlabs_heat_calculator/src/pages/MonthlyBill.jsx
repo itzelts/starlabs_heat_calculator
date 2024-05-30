@@ -1,62 +1,69 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Address = () => {
+const MonthlyBill = () => {
   const navigate = useNavigate();
-  const [address, setAddress] = useState("");
+  const [monthlyBill, setMonthlyBill] = useState("");
 
 
-  const [addressAlert, setAddressAlert] = useState(false);
+  const [monthlyBillAlert, setMonthlyBillAlert] = useState(false);
 
 
   const handleSumbit = (event) => {
     event.preventDefault();
 
-    if (address === "") {
-      setAddressAlert(true);
+    if (monthlyBill === "") {
+      setMonthlyBillAlert(true);
     } else {
-      setAddressAlert(false);
+      setMonthlyBillAlert(false);
     }
 
 
-    if (address !== "") {
-      navigate("/propertysize");
+    if (monthlyBill !== "") {
+      navigate("/selectpropertytype");
     }
   };
 
   return (
     <div className="sm:basis-[60%] w-[300px] sm:w-[100%] h-[100%] sm:pr-[80px]">
       <h1 className="mt-10 text-3xl font-[800] mb-2 text-primary-marineBlue">
-        Address
+        Monthly Energy Bill
       </h1>
       <p className="text-neutral-coolGray mb-6">
-        Please provide the property address.
+        Please provide your monthly energy bill (AUD).
       </p>
       <form onSubmit={handleSumbit} className="flex flex-col">
         <div className="form-wrapper flex flex-col relative">
           <label className="text-primary-marineBlue font-[500] mb-2">
-            Address
+            Monthly Bill
           </label>
           <input
-            onChange={(e) => setAddress(e.target.value)}
+            onChange={(e) => setMonthlyBill(e.target.value)}
             className={`${
-              addressAlert
+              monthlyBillAlert
                 ? "focus:outline-primary-strawberryRed"
                 : "focus:outline-primary-marineBlue"
             } mb-6 outline outline-1 outline-neutral-lightGray rounded-[4px] p-3 `}
             type="text"
-            placeholder="e.g. Ajax Avenue, Nelson Bay New South Wales 2315, Australia "
+            placeholder="e.g. 100"
           />
           <span
             className={`${
-              addressAlert ? "inline" : "hidden"
+              monthlyBillAlert ? "inline" : "hidden"
             } text-primary-strawberryRed font-[500] absolute right-[10px]`}
           >
             This field is required
           </span>
           
         </div>
-        <div className="flex justify-end items-end py-[2px] mt-[120px] sm:mt-[26px]">
+        <div className="flex justify-between items-center">
+          <button
+            onClick={() => navigate("/propertysize")}
+            className="text-neutral-coolGray font-[500] capitalize transition-all duration-300 hover:text-primary-marineBlue cursor-pointer"
+          >
+            Back
+          </button>
+
           <button
             className="bg-primary-marineBlue text-white border-0 rounded-md px-6 py-3 transition-all duration-300 hover:opacity-75"
             type="sumbit"
@@ -69,4 +76,4 @@ const Address = () => {
   );
 };
 
-export default Address;
+export default MonthlyBill;

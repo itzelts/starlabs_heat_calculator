@@ -8,13 +8,31 @@ export const data = [
   {
     id: 2,
     step: "step 2",
-    title: "Select Property Type",
-    linkTo: "selectpropertytype",
+    title: "Input Property Size",
+    linkTo: "propertysize",
   },
   {
     id: 3,
     step: "step 3",
-    title: "summary",
+    title: "Input Monthly Energy Bill",
+    linkTo: "monthlybill",
+  },
+  {
+    id: 4,
+    step: "step 4",
+    title: "Select Property Type",
+    linkTo: "selectpropertytype",
+  },
+  {
+    id: 5,
+    step: "step 5",
+    title: "Financing Option",
+    linkTo: "selectfinancingoption",
+  },
+  {
+    id: 5,
+    step: "step 5",
+    title: "Summary",
     linkTo: "summary",
   },
 ];

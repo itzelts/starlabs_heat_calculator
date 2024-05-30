@@ -1,23 +1,24 @@
 import { createContext, useState } from "react";
-import home from "../assets/icons8-home.svg"
+import solar from "../assets/icons8-solar-50.png"
+import battery from "../assets/icons8-battery-48.png"
 
 const PropertyContext = createContext();
 
 export const PropertyProvider = ({ children }) => {
   const [propertyType, setPropertyType] = useState([
     { id: 1, 
-      img: home, 
-      title: "Type", 
+      img: solar, 
+      title: "Solar Panel", 
     },
     {
       id: 2,
-      img: home,
-      title: "Type",
+      img: battery,
+      title: "Battery",
     },
     {
       id: 3,
-      img: home,
-      title: "Type",
+      img: solar,
+      title: "Solar and Battery",
     },
   ]);
 

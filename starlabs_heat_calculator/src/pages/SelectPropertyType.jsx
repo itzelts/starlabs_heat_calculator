@@ -18,10 +18,10 @@ const SelectPropertyType = () => {
     setNum(id + 1);
   };
 
-  const handleSumbit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     if (selectedPropertyType.title !== "") {
-      navigate("/summary");
+      navigate("/financingoption");
     } else {
       alert("Please choose a property type");
     }
@@ -35,7 +35,7 @@ const SelectPropertyType = () => {
       <p className="text-neutral-coolGray mb-6">
         You have the option of the following types.
       </p>
-      <form onSubmit={handleSumbit} className="flex flex-col relative">
+      <form onSubmit={handleSubmit} className="flex flex-col relative">
         <div
           className={`plansMonthly mb-8 flex flex-col sm:flex-row justify-between cursor-pointer`}
         >
@@ -63,10 +63,10 @@ const SelectPropertyType = () => {
 
         <div className="flex justify-between items-center">
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/monthlybill")}
             className="text-neutral-coolGray font-[500] capitalize transition-all duration-300 hover:text-primary-marineBlue cursor-pointer"
           >
-            back
+            Back
           </button>
 
           <button
